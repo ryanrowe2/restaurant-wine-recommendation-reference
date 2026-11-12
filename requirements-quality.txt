@@ -1,0 +1,2 @@
+# Optional local quality instrumentation; the runtime has no third-party dependency.
+coverage==7.13.3

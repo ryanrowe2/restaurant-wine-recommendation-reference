@@ -1,0 +1,281 @@
+{
+  "immutable_external_gates": {
+    "X01": "Disposable PostgreSQL migrations and transaction tests",
+    "X02": "Typeform, OpenAI and Postmark staging contract tests",
+    "X03": "Hosted GitHub Actions on exact published commit",
+    "X04": "Publication rights and former organization-related disclosure approval",
+    "X05": "Deployment security and operational load/alert checks if claiming production readiness",
+    "X06": "Owner explicit approval to publish this identified archive"
+  },
+  "immutable_findings": {
+    "P7-01": {
+      "regression": "test_p7_01_expired_tombstone_replay_rejected_by_freshness",
+      "severity": "medium"
+    },
+    "P7-02": {
+      "regression": "test_p7_02_stale_hold_from_claim_is_idempotent",
+      "severity": "medium"
+    },
+    "P7-03": {
+      "regression": "test_p7_03_sqlite_rejects_invalid_tag_members_on_update_and_insert",
+      "severity": "medium"
+    },
+    "P7-04": {
+      "regression": "test_p7_04_bounded_server_side_import",
+      "severity": "medium"
+    },
+    "P7-05": {
+      "regression": "test_p7_05_contractions_and_negation_excluded",
+      "severity": "low"
+    },
+    "P7-06": {
+      "regression": "test_p7_06_email_displays_human_readable_type",
+      "severity": "low"
+    },
+    "P7-07": {
+      "regression": "test_p7_07_unresolved_limit_enforced",
+      "severity": "low"
+    },
+    "P7-08": {
+      "regression": "test_p7_08_docs_do_not_permit_requeue_of_submitted_event",
+      "severity": "low"
+    },
+    "PP-S01": {
+      "regression": "test_permission_fields_cannot_grant_publication",
+      "severity": "high"
+    },
+    "PP-S02": {
+      "regression": "test_issue_removal_breaks_baseline",
+      "severity": "high"
+    },
+    "PP-S03": {
+      "regression": "test_unexecuted_test_cannot_close_issue",
+      "severity": "medium"
+    },
+    "PP-S04": {
+      "regression": "test_wrong_release_digest_is_rejected",
+      "severity": "medium"
+    },
+    "PP-S05": {
+      "regression": "test_sqlite_rejects_symlink_swap",
+      "severity": "high"
+    },
+    "PP-S06": {
+      "regression": "test_sqlite_relative_path_survives_chdir",
+      "severity": "medium"
+    },
+    "PP-S07": {
+      "regression": "test_provider_late_receipt_is_fenced",
+      "severity": "medium"
+    },
+    "PP-S08": {
+      "regression": "test_model_cannot_skip_stricter_tier",
+      "severity": "medium"
+    },
+    "PP-S09": {
+      "regression": "test_postmark_accepts_display_sender",
+      "severity": "medium"
+    },
+    "PP10-01": {
+      "regression": "test_pp10_01_sqlite_rejects_binary_required_fields_on_direct_update",
+      "severity": "medium"
+    },
+    "PP10-02": {
+      "regression": "test_pp10_02_removed_legacy_venue_deletes_only_its_inventory",
+      "severity": "medium"
+    },
+    "PP10-03": {
+      "regression": "test_pp10_03_postmark_receipt_exactly_one_recipient_no_cc_bcc",
+      "severity": "medium"
+    },
+    "PP10-04": {
+      "regression": "test_pp10_04_hex_comment_requires_externally_pinned_git_commit",
+      "severity": "medium"
+    },
+    "PP10-05": {
+      "regression": "test_pp10_05_canonical_postgres_tags_have_additive_guarded_migration",
+      "severity": "medium"
+    },
+    "PP10-06": {
+      "regression": "test_pp10_06_documentation_identifies_previous_versions_as_historical",
+      "severity": "low"
+    },
+    "V4-01": {
+      "regression": "test_01_approved_pairings_survive_replacement",
+      "severity": "high"
+    },
+    "V4-02": {
+      "regression": "test_02_direct_wsgi_rejects_shared_signing_secrets",
+      "severity": "medium"
+    },
+    "V4-03": {
+      "regression": "test_03_explicit_dsn_propagates_to_http_and_worker",
+      "severity": "medium"
+    },
+    "V4-04": {
+      "regression": "test_receipt_verifier_requires_matching_provider_metadata_and_recipient",
+      "severity": "medium"
+    },
+    "V4-05": {
+      "regression": "test_05_existing_alias_is_promoted_to_reviewed",
+      "severity": "medium"
+    },
+    "V4-06": {
+      "regression": "test_06_permanent_model_outage_is_audited_and_alerted",
+      "severity": "medium"
+    },
+    "V4-07": {
+      "regression": "test_07_sqlite_readiness_does_not_fetch_full_catalog",
+      "severity": "medium"
+    },
+    "V4-08": {
+      "regression": "test_08_sqlite_iterator_limit_stops_at_max_plus_one",
+      "severity": "medium"
+    },
+    "V4-09": {
+      "regression": "test_09_venue_quota_limits_distinct_recipients",
+      "severity": "medium"
+    },
+    "V4-10": {
+      "regression": "test_10_negated_source_pairings_not_proposed",
+      "severity": "low"
+    },
+    "V4-11": {
+      "regression": "test_11_boolean_retention_rejected",
+      "severity": "low"
+    },
+    "V6-01": {
+      "regression": "test_01_archive_aliases_rejected_before_extraction",
+      "severity": "high"
+    },
+    "V6-02": {
+      "regression": "test_02_provider_secret_formats_detected_in_distributable",
+      "severity": "high"
+    },
+    "V6-03": {
+      "regression": "test_03_uncertain_delivery_never_requeued_from_free_text",
+      "severity": "high"
+    },
+    "V6-04": {
+      "regression": "test_04_postgres_connection_enforces_verified_tls",
+      "severity": "high"
+    },
+    "V6-05": {
+      "regression": "test_05_empty_venue_exists_independently_of_inventory",
+      "severity": "medium"
+    },
+    "V6-06": {
+      "regression": "test_06_quota_identity_is_case_insensitive_but_email_is_preserved",
+      "severity": "medium"
+    },
+    "V6-07": {
+      "regression": "test_07_webhook_catches_database_integrity_error",
+      "severity": "medium"
+    },
+    "V6-08": {
+      "regression": "test_08_database_generation_blocks_inode_reuse",
+      "severity": "low"
+    },
+    "V6-09": {
+      "regression": "test_09_archive_digest_streamed_and_size_bounded",
+      "severity": "medium"
+    },
+    "V6-10": {
+      "regression": "test_10_operational_main_entry_points_are_exercised",
+      "severity": "medium"
+    },
+    "V6-11": {
+      "regression": "test_11_readme_documents_current_release",
+      "severity": "low"
+    },
+    "V8-A01": {
+      "regression": "test_v8_a01_parent_traversal_fails_scanner_and_full_gate",
+      "severity": "high"
+    },
+    "V8-A02": {
+      "regression": "test_v8_a02_fine_grained_token_fails_scanner_and_full_gate",
+      "severity": "high"
+    },
+    "V8-A03": {
+      "regression": "test_v8_a03_authoritative_snapshot_clears_empty_registry_venue",
+      "severity": "medium"
+    },
+    "V8-A04": {
+      "regression": "test_v8_a04_current_verification_document_does_not_claim_v3_is_current",
+      "severity": "low"
+    },
+    "V9-01": {
+      "regression": "test_v9_01_zip_comment_fails_scanner_and_gate",
+      "severity": "high"
+    },
+    "V9-02": {
+      "regression": "test_v9_02_sqlite_empty_authorized_snapshot_is_atomic_and_scoped",
+      "severity": "medium"
+    },
+    "V9-03": {
+      "regression": "test_v9_03_sqlite_rejects_blank_or_oversized_required_fields",
+      "severity": "medium"
+    },
+    "V9-04": {
+      "regression": "test_v9_04_postmark_acceptance_requires_exact_integer_code",
+      "severity": "medium"
+    },
+    "P11-01": {
+      "regression": "test_p11_01_postmark_mismatched_recipient_not_accepted",
+      "severity": "medium"
+    },
+    "P11-02": {
+      "regression": "test_p11_02_null_nonstring_and_whitespace_legacy_names_rejected",
+      "severity": "medium"
+    },
+    "P11-03": {
+      "regression": "test_p11_03_additive_migration_checks_historical_suggestions",
+      "severity": "medium"
+    },
+    "P11-04": {
+      "regression": "test_p11_04_reviewed_enrichment_survives_zero_inventory_reactivation",
+      "severity": "medium"
+    },
+    "P11-05": {
+      "regression": "test_p11_05_schema_rejects_unvalidated_constraints",
+      "severity": "medium"
+    },
+    "P11-06": {
+      "regression": "test_p11_06_sqlite_read_refuses_oversized_direct_sql_catalog",
+      "severity": "medium"
+    },
+    "P12-01": {
+      "severity": "medium",
+      "regression": "test_p12_01_reviewed_characteristics_survive_zero_stock_reactivation"
+    },
+    "P12-02": {
+      "severity": "medium",
+      "regression": "test_p12_02_key_columns_and_fk_source_must_be_exact"
+    },
+    "P12-03": {
+      "severity": "medium",
+      "regression": "test_p12_03_replacement_existing_inventory_is_bounded"
+    },
+    "P12-04": {
+      "severity": "medium",
+      "regression": "test_p12_04_null_utf8_and_embedded_nul_fail_closed_on_direct_writes"
+    },
+    "P12-05": {
+      "severity": "low",
+      "regression": "test_p12_05_readme_current_version_and_history"
+    }
+  },
+  "immutable_invariants": {
+    "S01": "Archive rejects hidden or unscanned files",
+    "S02": "Signed webhook does not authorize a second venue",
+    "S03": "Retries have a recoverable persisted payload",
+    "S04": "Model faults use controlled catalog-grounded fallback",
+    "S05": "Uncertain provider sends require reconciliation",
+    "S06": "Full catalog is not consumed in readiness",
+    "S07": "Catalog import is bounded",
+    "S08": "Quota rejects excess requests",
+    "S09": "PostgreSQL reviewed data preserved"
+  },
+  "origin": "Restaurant Wine Reference v11 historical independent audit ledger through PP10-06",
+  "schema_version": 1
+}

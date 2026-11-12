@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="245" viewBox="0 0 960 245" role="img" aria-labelledby="title desc">
+<title id="title">Synthetic selection and fallback</title>
+<desc id="desc">Reference-only bounded venue-specific candidate selection.</desc>
+<rect width="960" height="245" fill="#0c192c"/>
+<text x="24" y="45" fill="#e7f0fd" font-size="21" font-family="Arial,sans-serif">Synthetic selection and fallback</text>
+<rect x="24" y="82" width="216" height="114" rx="12" fill="#152943" stroke="#4978a0" stroke-width="2"/>
+<text x="132" y="122" text-anchor="middle" fill="#ecf2fc" font-family="Arial,sans-serif" font-size="17">Preferences</text>
+<text x="132" y="151" text-anchor="middle" fill="#afc2d9" font-family="Arial,sans-serif" font-size="13">Normalized input</text>
+<path d="M240 139 H256" stroke="#79c9bb" stroke-width="3"/>
+<rect x="258" y="82" width="216" height="114" rx="12" fill="#152943" stroke="#4978a0" stroke-width="2"/>
+<text x="366" y="122" text-anchor="middle" fill="#ecf2fc" font-family="Arial,sans-serif" font-size="17">Eligibility</text>
+<text x="366" y="151" text-anchor="middle" fill="#afc2d9" font-family="Arial,sans-serif" font-size="13">Venue inventory</text>
+<path d="M474 139 H490" stroke="#79c9bb" stroke-width="3"/>
+<rect x="492" y="82" width="216" height="114" rx="12" fill="#152943" stroke="#4978a0" stroke-width="2"/>
+<text x="600" y="122" text-anchor="middle" fill="#ecf2fc" font-family="Arial,sans-serif" font-size="17">Fallback</text>
+<text x="600" y="151" text-anchor="middle" fill="#afc2d9" font-family="Arial,sans-serif" font-size="13">Optional criteria</text>
+<path d="M708 139 H724" stroke="#79c9bb" stroke-width="3"/>
+<rect x="726" y="82" width="216" height="114" rx="12" fill="#152943" stroke="#4978a0" stroke-width="2"/>
+<text x="834" y="122" text-anchor="middle" fill="#ecf2fc" font-family="Arial,sans-serif" font-size="17">Validation</text>
+<text x="834" y="151" text-anchor="middle" fill="#afc2d9" font-family="Arial,sans-serif" font-size="13">Trusted wine IDs</text>
+</svg>

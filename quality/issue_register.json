@@ -1,0 +1,721 @@
+{
+  "schema_version": 2,
+  "baseline": "Restaurant Wine Reference v18 independently offline repaired seven A17 findings; original 93 findings preserved",
+  "decision_policy": {
+    "offline_stop_rule": "All registered critical/high issues closed with passing regression evidence; zero unadjudicated critical/high issues; archive/test/security/documentation checks pass.",
+    "publication_stop_rule": "Portfolio publication requires passing offline gate, project disclosure rights, and explicit owner authorization for the identified archive. Live service testing is not required for an accurately disclosed reference example; it is required before claiming a tested production integration.",
+    "audit_policy": "New issues are deduplicated against this register, assigned severity and reproduction, and added before implementation. Rerun only impacted tests first, then the complete gate. Do not restart a zero-defect search unless the scope or risk changes.",
+    "severity_levels": [
+      "critical",
+      "high",
+      "medium",
+      "low"
+    ],
+    "ci_timing": "GitHub-hosted CI occurs only after an authorized GitHub push (or authorized private staging push); it cannot be a condition before any GitHub repository exists."
+  },
+  "findings": [
+    {
+      "id": "V4-01",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_01_approved_pairings_survive_replacement"
+    },
+    {
+      "id": "V4-02",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_02_direct_wsgi_rejects_shared_signing_secrets"
+    },
+    {
+      "id": "V4-03",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_03_explicit_dsn_propagates_to_http_and_worker"
+    },
+    {
+      "id": "V4-04",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_receipt_verifier_requires_matching_provider_metadata_and_recipient"
+    },
+    {
+      "id": "V4-05",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_05_existing_alias_is_promoted_to_reviewed"
+    },
+    {
+      "id": "V4-06",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_06_permanent_model_outage_is_audited_and_alerted"
+    },
+    {
+      "id": "V4-07",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_07_sqlite_readiness_does_not_fetch_full_catalog"
+    },
+    {
+      "id": "V4-08",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_08_sqlite_iterator_limit_stops_at_max_plus_one"
+    },
+    {
+      "id": "V4-09",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_09_venue_quota_limits_distinct_recipients"
+    },
+    {
+      "id": "V4-10",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_10_negated_source_pairings_not_proposed"
+    },
+    {
+      "id": "V4-11",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_11_boolean_retention_rejected"
+    },
+    {
+      "id": "PP-S01",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_permission_fields_cannot_grant_publication"
+    },
+    {
+      "id": "PP-S02",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_issue_removal_breaks_baseline"
+    },
+    {
+      "id": "PP-S03",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_unexecuted_test_cannot_close_issue"
+    },
+    {
+      "id": "PP-S04",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_wrong_release_digest_is_rejected"
+    },
+    {
+      "id": "PP-S05",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_sqlite_rejects_symlink_swap"
+    },
+    {
+      "id": "PP-S06",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_sqlite_relative_path_survives_chdir"
+    },
+    {
+      "id": "PP-S07",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_provider_late_receipt_is_fenced"
+    },
+    {
+      "id": "PP-S08",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_model_cannot_skip_stricter_tier"
+    },
+    {
+      "id": "PP-S09",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_postmark_accepts_display_sender"
+    },
+    {
+      "id": "V6-01",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_01_archive_aliases_rejected_before_extraction"
+    },
+    {
+      "id": "V6-02",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_02_provider_secret_formats_detected_in_distributable"
+    },
+    {
+      "id": "V6-03",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_03_uncertain_delivery_never_requeued_from_free_text"
+    },
+    {
+      "id": "V6-04",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_04_postgres_connection_enforces_verified_tls"
+    },
+    {
+      "id": "V6-05",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_05_empty_venue_exists_independently_of_inventory"
+    },
+    {
+      "id": "V6-06",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_06_quota_identity_is_case_insensitive_but_email_is_preserved"
+    },
+    {
+      "id": "V6-07",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_07_webhook_catches_database_integrity_error"
+    },
+    {
+      "id": "V6-08",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_08_database_generation_blocks_inode_reuse"
+    },
+    {
+      "id": "V6-09",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_09_archive_digest_streamed_and_size_bounded"
+    },
+    {
+      "id": "V6-10",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_10_operational_main_entry_points_are_exercised"
+    },
+    {
+      "id": "V6-11",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_11_readme_documents_current_release"
+    },
+    {
+      "id": "P7-01",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p7_01_expired_tombstone_replay_rejected_by_freshness"
+    },
+    {
+      "id": "P7-02",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p7_02_stale_hold_from_claim_is_idempotent"
+    },
+    {
+      "id": "P7-03",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p7_03_sqlite_rejects_invalid_tag_members_on_update_and_insert"
+    },
+    {
+      "id": "P7-04",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p7_04_bounded_server_side_import"
+    },
+    {
+      "id": "P7-05",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_p7_05_contractions_and_negation_excluded"
+    },
+    {
+      "id": "P7-06",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_p7_06_email_displays_human_readable_type"
+    },
+    {
+      "id": "P7-07",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_p7_07_unresolved_limit_enforced"
+    },
+    {
+      "id": "P7-08",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_p7_08_docs_do_not_permit_requeue_of_submitted_event"
+    },
+    {
+      "id": "V8-A01",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_v8_a01_parent_traversal_fails_scanner_and_full_gate"
+    },
+    {
+      "id": "V8-A02",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_v8_a02_fine_grained_token_fails_scanner_and_full_gate"
+    },
+    {
+      "id": "V8-A03",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_v8_a03_authoritative_snapshot_clears_empty_registry_venue"
+    },
+    {
+      "id": "V8-A04",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_v8_a04_current_verification_document_does_not_claim_v3_is_current"
+    },
+    {
+      "id": "V9-01",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_v9_01_zip_comment_fails_scanner_and_gate"
+    },
+    {
+      "id": "V9-02",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_v9_02_sqlite_empty_authorized_snapshot_is_atomic_and_scoped"
+    },
+    {
+      "id": "V9-03",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_v9_03_sqlite_rejects_blank_or_oversized_required_fields"
+    },
+    {
+      "id": "V9-04",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_v9_04_postmark_acceptance_requires_exact_integer_code"
+    },
+    {
+      "id": "PP10-01",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_pp10_01_sqlite_rejects_binary_required_fields_on_direct_update"
+    },
+    {
+      "id": "PP10-02",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_pp10_02_removed_legacy_venue_deletes_only_its_inventory"
+    },
+    {
+      "id": "PP10-03",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_pp10_03_postmark_receipt_exactly_one_recipient_no_cc_bcc"
+    },
+    {
+      "id": "PP10-04",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_pp10_04_hex_comment_requires_externally_pinned_git_commit"
+    },
+    {
+      "id": "PP10-05",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_pp10_05_canonical_postgres_tags_have_additive_guarded_migration"
+    },
+    {
+      "id": "PP10-06",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_pp10_06_documentation_identifies_previous_versions_as_historical"
+    },
+    {
+      "id": "P11-01",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p11_01_postmark_mismatched_recipient_not_accepted"
+    },
+    {
+      "id": "P11-02",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p11_02_null_nonstring_and_whitespace_legacy_names_rejected"
+    },
+    {
+      "id": "P11-03",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p11_03_additive_migration_checks_historical_suggestions"
+    },
+    {
+      "id": "P11-04",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p11_04_reviewed_enrichment_survives_zero_inventory_reactivation"
+    },
+    {
+      "id": "P11-05",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p11_05_schema_rejects_unvalidated_constraints"
+    },
+    {
+      "id": "P11-06",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p11_06_sqlite_read_refuses_oversized_direct_sql_catalog"
+    },
+    {
+      "id": "P12-01",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p12_01_reviewed_characteristics_survive_zero_stock_reactivation"
+    },
+    {
+      "id": "P12-02",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p12_02_key_columns_and_fk_source_must_be_exact"
+    },
+    {
+      "id": "P12-03",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p12_03_replacement_existing_inventory_is_bounded"
+    },
+    {
+      "id": "P12-04",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p12_04_null_utf8_and_embedded_nul_fail_closed_on_direct_writes"
+    },
+    {
+      "id": "P12-05",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_p12_05_readme_current_version_and_history"
+    },
+    {
+      "id": "P13-01",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p13_01_json_nul_and_noncanonical_tags_rejected_at_sql_boundary"
+    },
+    {
+      "id": "P13-02",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p13_02_expired_claim_late_receipt_accepted_with_original_nonce"
+    },
+    {
+      "id": "P13-03",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p13_03_existing_weak_triggers_replaced_atomically_on_upgrade"
+    },
+    {
+      "id": "P13-04",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p13_04_unexpected_restrictions_and_partial_index_rejected"
+    },
+    {
+      "id": "P14-01",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_p14_01_requeue_keeps_monotonic_attempt_and_rejects_stale_worker"
+    },
+    {
+      "id": "P14-02",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p14_02_text_domain_rejects_control_and_unicode_whitespace"
+    },
+    {
+      "id": "P14-03",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p14_03_oversized_raw_json_fails_closed_without_oversize_persist"
+    },
+    {
+      "id": "P14-04",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p14_04_raster_metadata_credential_is_blocked_by_release_scanner"
+    },
+    {
+      "id": "P14-05",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p14_05_additive_sql_contract_covers_unicode_whitespace_and_controls"
+    },
+    {
+      "id": "P15-01",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_p15_01_svg_embedded_png_and_secret_are_rejected"
+    },
+    {
+      "id": "P15-02",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p15_02_svg_active_content_event_handlers_and_external_links_are_rejected"
+    },
+    {
+      "id": "P15-03",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p15_03_provider_acceptance_requires_exact_claim_nonce"
+    },
+    {
+      "id": "P15-04",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p15_04_invisible_and_bidi_catalog_fields_rejected"
+    },
+    {
+      "id": "P15-05",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p15_05_bad_archived_pronunciation_uses_valid_incoming"
+    },
+    {
+      "id": "P15-06",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_p15_06_duplicate_and_noncanonical_tags_are_rejected_at_sql_boundary"
+    },
+    {
+      "id": "P15-07",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_p15_07_venue_contract_identical_across_csv_wine_and_selection"
+    },
+    {
+      "id": "P15-08",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_p15_08_postgres_positive_probes_read_back_all_synthetic_rows"
+    },
+    {
+      "id": "A16-01",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_a16_01_xml_references_and_nested_html_entities_are_scanned_after_parsing"
+    },
+    {
+      "id": "A16-02",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_a16_02_weakened_catalog_table_fails_closed_with_existing_data"
+    },
+    {
+      "id": "A16-03",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_a16_03_event_db_world_readable_mode_is_detected_on_every_connect"
+    },
+    {
+      "id": "A16-04",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_a16_04_invalid_venue_rejected_before_admission_or_quota_writes"
+    },
+    {
+      "id": "A16-05",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_a16_05_postgres_additive_tag_function_rejects_noncanonical_arrays"
+    },
+    {
+      "id": "F16-01",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_f16_01_unverified_custom_recommender_text_cannot_reach_sender"
+    },
+    {
+      "id": "F16-02",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_f16_02_claim_never_creates_an_unadmitted_event"
+    },
+    {
+      "id": "F16-03",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_f16_03_stale_poison_cannot_destroy_live_worker_claim"
+    },
+    {
+      "id": "F16-04",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_f16_04_existing_event_schema_without_checks_is_rejected_before_alter"
+    },
+    {
+      "id": "F16-05",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_f16_05_legacy_import_skips_quarantined_pronunciation"
+    },
+    {
+      "id": "F16-07",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_f16_07_worker_id_length_and_population_bounded"
+    },
+    {
+      "id": "F16-09",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_f16_09_quarantine_table_columns_and_primary_key_verified"
+    },
+    {
+      "id": "A17-01",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_a17_01_split_svg_and_deep_entity_credentials_blocked"
+    },
+    {
+      "id": "A17-02",
+      "severity": "high",
+      "state": "fixed_offline",
+      "regression": "test_a17_02_nonempty_zip_directories_rejected"
+    },
+    {
+      "id": "A17-03",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_a17_03_unknown_catalog_trigger_rejected_before_writes"
+    },
+    {
+      "id": "A17-04",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_a17_04_admission_ledger_foreign_key_drift_rejected"
+    },
+    {
+      "id": "A17-05",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_a17_05_expired_malformed_claim_quarantines_without_crashing_scheduler"
+    },
+    {
+      "id": "A17-06",
+      "severity": "medium",
+      "state": "fixed_offline",
+      "regression": "test_a17_06_definitive_provider_nonacceptance_recoverable_without_reused_nonce"
+    },
+    {
+      "id": "A17-07",
+      "severity": "low",
+      "state": "fixed_offline",
+      "regression": "test_a17_07_signed_invalid_token_returns_http_400"
+    }
+  ],
+  "release_invariants": [
+    {
+      "id": "S01",
+      "name": "Archive rejects hidden or unscanned files",
+      "regression": "test_01_release_scan_rejects_forbidden_archive_members"
+    },
+    {
+      "id": "S02",
+      "name": "Signed webhook does not authorize a second venue",
+      "regression": "test_02_direct_wsgi_rejects_shared_signing_secrets"
+    },
+    {
+      "id": "S03",
+      "name": "Retries have a recoverable persisted payload",
+      "regression": "test_03_direct_entrypoint_persists_retryable_payload"
+    },
+    {
+      "id": "S04",
+      "name": "Model faults use controlled catalog-grounded fallback",
+      "regression": "test_04_malformed_openai_uses_grounded_delivery_fallback"
+    },
+    {
+      "id": "S05",
+      "name": "Uncertain provider sends require reconciliation",
+      "regression": "test_provider_verification_rechecks_event_after_network_lookup"
+    },
+    {
+      "id": "S06",
+      "name": "Full catalog is not consumed in readiness",
+      "regression": "test_07_sqlite_readiness_does_not_fetch_full_catalog"
+    },
+    {
+      "id": "S07",
+      "name": "Catalog import is bounded",
+      "regression": "test_08_sqlite_iterator_limit_stops_at_max_plus_one"
+    },
+    {
+      "id": "S08",
+      "name": "Quota rejects excess requests",
+      "regression": "test_09_venue_quota_limits_distinct_recipients"
+    },
+    {
+      "id": "S09",
+      "name": "PostgreSQL reviewed data preserved",
+      "regression": "test_01_approved_pairings_survive_replacement"
+    }
+  ],
+  "external_gates": [
+    {
+      "id": "X01",
+      "name": "Disposable PostgreSQL migrations and transaction tests",
+      "status": "not_verified",
+      "evidence": null,
+      "blocking_for": [
+        "production_deployment"
+      ]
+    },
+    {
+      "id": "X02",
+      "name": "Typeform, OpenAI and Postmark staging contract tests",
+      "status": "not_verified",
+      "evidence": null,
+      "blocking_for": [
+        "production_deployment"
+      ]
+    },
+    {
+      "id": "X03",
+      "name": "Hosted GitHub Actions on exact published commit",
+      "status": "not_verified",
+      "evidence": null,
+      "blocking_for": [
+        "post_publication_ci"
+      ]
+    },
+    {
+      "id": "X04",
+      "name": "Publication rights and former organization-related disclosure approval",
+      "status": "not_verified",
+      "evidence": null,
+      "blocking_for": [
+        "portfolio_publication"
+      ]
+    },
+    {
+      "id": "X05",
+      "name": "Deployment security and operational load/alert checks if claiming production readiness",
+      "status": "not_verified",
+      "evidence": null,
+      "blocking_for": [
+        "production_deployment"
+      ]
+    },
+    {
+      "id": "X06",
+      "name": "Owner explicit approval to publish this identified archive",
+      "status": "not_verified",
+      "evidence": null,
+      "blocking_for": [
+        "portfolio_publication"
+      ]
+    }
+  ]
+}

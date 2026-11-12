@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Catalog-verified recommendation contract",
+  "description": "Independent example. Python also enforces exact venue-scoped identity membership and matching catalog attributes.",
+  "type": "array",
+  "minItems": 3,
+  "maxItems": 3,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "wine_id",
+      "wine_name",
+      "pronunciation",
+      "origin",
+      "type",
+      "description"
+    ],
+    "properties": {
+      "wine_id": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1500,
+        "pattern": "^(?=.*\\S)[^\\u0000-\\u0008\\u000b-\\u001f]*$"
+      },
+      "wine_name": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1500,
+        "pattern": "^(?=.*\\S)[^\\u0000-\\u0008\\u000b-\\u001f]*$"
+      },
+      "pronunciation": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1500,
+        "pattern": "^(?=.*\\S)[^\\u0000-\\u0008\\u000b-\\u001f]*$"
+      },
+      "origin": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1500,
+        "pattern": "^(?=.*\\S)[^\\u0000-\\u0008\\u000b-\\u001f]*$"
+      },
+      "type": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1500,
+        "pattern": "^(?=.*\\S)[^\\u0000-\\u0008\\u000b-\\u001f]*$"
+      },
+      "description": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1500,
+        "pattern": "^(?=.*\\S)[^\\u0000-\\u0008\\u000b-\\u001f]*$"
+      }
+    }
+  }
+}

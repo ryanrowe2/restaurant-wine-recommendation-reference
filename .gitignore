@@ -1,0 +1,36 @@
+# Never commit runtime state, private data, client catalogs, credentials or exports.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.sqlite-wal
+*.sqlite-shm
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+*.sqlite3-journal
+*.log
+*.key
+*.pem
+*.p12
+*.pfx
+*.zip
+*backup_wines*.sql
+*original_catalog*.csv
+*production_config*
+.DS_Store
+
+# Instrumentation and local release evidence
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/

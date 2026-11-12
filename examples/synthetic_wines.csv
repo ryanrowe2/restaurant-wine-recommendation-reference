@@ -1,0 +1,12 @@
+restaurant_id,wine_id,wine_name,pronunciation,origin,category,type,sweetness,characteristics,available_by_glass,available_by_bottle,pairings
+venue_a,a01,Juniper Ridge,JOON-ih-per rij,Imaginary Valley,red,red blend,dry,bold;spice,yes,yes,red_meat
+venue_a,a02,Slate Orchard,slayt OR-cherd,Imaginary Coast,red,red blend,dry,bold;berries,yes,yes,red_meat
+venue_a,a03,Poppy Lantern,POP-ee LAN-tern,Imaginary Foothills,red,rosé,semi-dry,fruity;floral,yes,no,spicy_food
+venue_a,a04,Cloudwater,klowd-WAW-ter,Imaginary River,white,white blend,dry,refreshing;floral,yes,yes,fish
+venue_a,a05,Copper Summit,KOP-er SUM-it,Imaginary Highlands,red,red blend,dry,bold;spice,no,yes,red_meat
+venue_a,a06,Amber Grove,AM-ber grohv,Imaginary Plain,white,white blend,sweet,fruity;light,no,yes,dessert
+venue_b,b01,Tideglass,TYDE-glass,Imaginary Harbor,white,white blend,dry,refreshing;fresh,yes,yes,fish
+venue_b,b02,Moss Horizon,maws hor-EYE-zun,Imaginary Forest,red,red blend,dry,bold;berries,yes,yes,red_meat
+venue_b,b03,Gold Finch,gohld finch,Imaginary Hill,white,white blend,semi-dry,floral;light,yes,no,dessert
+venue_b,b04,Evening Ember,EEV-ning EM-ber,Imaginary Desert,red,red blend,sweet,fruity;rich,no,yes,spicy_food
+venue_sparse,s01,Single Oak,SING-gul ohk,Imaginary Hill,red,red blend,dry,bold,yes,yes,red_meat

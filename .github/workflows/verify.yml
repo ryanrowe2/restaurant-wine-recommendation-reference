@@ -1,0 +1,34 @@
+name: Verify independent Restaurant Wine Reference reference package
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  offline-tests:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12', '3.14']
+    env:
+      PYTHONPYCACHEPREFIX: /tmp/palate-ci-pycache
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2, pinned
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5, pinned
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install pinned quality measurement
+        run: python -m pip install -r requirements-quality.txt
+      - name: Stage exact tracked release archive
+        run: git archive --format=zip --prefix=restaurant-wine-recommendation-reference/ --output="$RUNNER_TEMP/palate-release.zip" HEAD
+      - name: Acceptance gate on exact artifact (tests, evidence, security, branch coverage)
+        run: |
+          python -B scripts/acceptance_gate.py --archive "$RUNNER_TEMP/palate-release.zip" \
+            --expected-git-commit "$(git rev-parse HEAD)" \
+            --output "$RUNNER_TEMP/acceptance-report.json"
+      - name: Inspect tracked file list
+        run: git ls-files

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "test_ids": {
+    "A17-01": "test_v18_seven_finding_closure.V18SevenFindingClosure.test_a17_01_split_svg_and_deep_entity_credentials_blocked",
+    "A17-02": "test_v18_seven_finding_closure.V18SevenFindingClosure.test_a17_02_nonempty_zip_directories_rejected",
+    "A17-03": "test_v18_seven_finding_closure.V18SevenFindingClosure.test_a17_03_unknown_catalog_trigger_rejected_before_writes",
+    "A17-04": "test_v18_seven_finding_closure.V18SevenFindingClosure.test_a17_04_admission_ledger_foreign_key_drift_rejected",
+    "A17-05": "test_v18_seven_finding_closure.V18SevenFindingClosure.test_a17_05_expired_malformed_claim_quarantines_without_crashing_scheduler",
+    "A17-06": "test_v18_seven_finding_closure.V18SevenFindingClosure.test_a17_06_definitive_provider_nonacceptance_recoverable_without_reused_nonce",
+    "A17-07": "test_v18_seven_finding_closure.V18SevenFindingClosure.test_a17_07_signed_invalid_token_returns_http_400"
+  }
+}

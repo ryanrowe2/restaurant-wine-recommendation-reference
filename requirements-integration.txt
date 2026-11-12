@@ -1,0 +1,3 @@
+# Optional staging dependencies; review versions and advisories before deployment.
+psycopg2-binary==2.9.13
+waitress==3.0.2
