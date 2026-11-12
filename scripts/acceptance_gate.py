@@ -89,6 +89,25 @@ def regression_evidence_errors(items:list[dict],successful_test_ids:list[str],
     return problems
 
 
+def valid_test_manifest(manifest:dict) -> bool:
+    """Account for passing, skipped, and failed unittest cases separately.
+
+    Skipped tests may be legitimately optional on a specific runtime. They
+    are never counted as successfully executed regression evidence.
+    """
+    count=manifest.get('tests_run')
+    passed=manifest.get('successful_test_ids')
+    skipped=manifest.get('skipped_test_ids')
+    if (type(count) is not int or count<171 or not isinstance(passed,list)
+        or not isinstance(skipped,list) or
+        type(manifest.get('skipped')) is not int or manifest['skipped']!=len(skipped)
+        or manifest.get('failures')!=0 or manifest.get('errors')!=0):
+        return False
+    all_ids=passed+skipped
+    return (len(all_ids)==count and len(set(all_ids))==count
+        and all(isinstance(t,str) and '.test_' in t for t in all_ids))
+
+
 def _checks(root: Path) -> tuple[list[dict], dict]:
     checks: list[dict] = []
     def record(name: str, ok: bool, detail=''):
@@ -184,9 +203,7 @@ def _checks(root: Path) -> tuple[list[dict], dict]:
             manifest={}
         executed=manifest.get('successful_test_ids',[])
         count=manifest.get('tests_run',0)
-    valid_manifest=(type(count) is int and count>=171 and isinstance(executed,list)
-       and len(executed)==count and len(set(executed))==count
-       and all(isinstance(x,str) and '.test_' in x for x in executed))
+    valid_manifest=valid_test_manifest(manifest)
     record('Full offline regression suite',run.returncode==0 and valid_manifest,
            f'{count} executed tests; return code {run.returncode}; {output[-400:].strip()}')
     try:

@@ -37,7 +37,13 @@ class InputError(ValueError):
 
 # Additional default-ignorable non-Cf Unicode format codepoints that can
 # produce visually empty or deceptively rendered catalog labels.
-DEFAULT_IGNORABLE_POINTS = frozenset((0x034F,0x061C,0x115F,0x1160,0x17B4,0x17B5,0x3164,0xFFA0))
+# The committed PostgreSQL migration uses a fixed Unicode codepoint set.
+# Some Cf codepoints were added to Python's Unicode tables after Python 3.10;
+# preserve the same rejection rule on older interpreters without weakening it.
+DEFAULT_IGNORABLE_POINTS = frozenset((
+    0x034F,0x061C,0x0890,0x0891,0x115F,0x1160,0x17B4,0x17B5,0x3164,0xFFA0,
+    0x13439,0x1343A,0x1343B,0x1343C,0x1343D,0x1343E,0x1343F,
+))
 DEFAULT_IGNORABLE_RANGES = ((0x180B,0x180F),(0xFE00,0xFE0F),(0xE0100,0xE01EF))
 
 def valid_venue_id(value: object) -> bool:

@@ -14,6 +14,27 @@ import acceptance_gate
 from release_gate import scan_distribution
 
 class ReleaseAcceptancePolicyTests(unittest.TestCase):
+    def test_test_manifest_counts_optional_skips_without_treating_them_as_successes(self):
+        passed=[f'test_example.ExampleTests.test_case_{i}' for i in range(171)]
+        optional='test_optional.OptionalTests.test_optional_schema'
+        manifest={'tests_run':172,'successful_test_ids':passed,
+                  'skipped_test_ids':[optional],'skipped':1,'failures':0,'errors':0}
+        self.assertTrue(acceptance_gate.valid_test_manifest(manifest))
+        # A skipped regression never becomes valid executed evidence.
+        record=[{'id':'R1','regression':'test_optional_schema'}]
+        pinned={'R1':optional}
+        self.assertTrue(acceptance_gate.regression_evidence_errors(record,passed,pinned))
+        self.assertFalse(acceptance_gate.regression_evidence_errors(
+            [{'id':'R2','regression':'test_case_0'}],passed,{'R2':passed[0]}))
+        for invalid in (
+            {**manifest,'tests_run':173},
+            {**manifest,'skipped':0},
+            {**manifest,'successful_test_ids':passed+[optional]},
+            {**manifest,'failures':1},
+        ):
+            with self.subTest(invalid=list(invalid.keys())):
+                self.assertFalse(acceptance_gate.valid_test_manifest(invalid))
+
     def test_issue_register_cannot_silently_omit_permissions(self):
         register=json.loads((ROOT/'quality/issue_register.json').read_text('utf-8'))
         ids={g['id'] for g in register['external_gates']}
