@@ -214,6 +214,16 @@ class V16EightFindings(unittest.TestCase):
             with self.subTest(missing=missing),self.assertRaisesRegex(RuntimeError,'v16 display-safe'):
                 _validate_schema_metadata(columns,[c for c in constraints if c[1]!=missing],indexes)
 
+    def test_unicode_sql_newer_cf_codepoints_rejected_on_old_python(self):
+        from pipeline import DEFAULT_IGNORABLE_POINTS, valid_required_wine_text
+        # Python 3.10 labels these as unassigned, while the immutable SQL
+        # migration prohibits them on every supported interpreter.
+        stable_added=(0x0890,0x0891,*range(0x13439,0x13440))
+        self.assertTrue(set(stable_added).issubset(DEFAULT_IGNORABLE_POINTS))
+        for cp in stable_added:
+            with self.subTest(codepoint=cp):
+                self.assertFalse(valid_required_wine_text('Wine'+chr(cp)))
+
     def test_unicode_sql_forbidden_codepoint_list_matches_python(self):
         sql=(ROOT/'examples/migrations/008_visible_display_text.sql').read_text()
         found=re.search(r'ARRAY\[([0-9, ]+)\]::integer\[\]',sql)

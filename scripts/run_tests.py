@@ -22,7 +22,8 @@ def main():
     if args.manifest:
         args.manifest.write_text(json.dumps({'tests_run':result.testsRun,
             'successful_test_ids':result.success_ids,'failures':len(result.failures),
-            'errors':len(result.errors),'skipped':len(result.skipped)},indent=2)+'\n')
+            'errors':len(result.errors),'skipped':len(result.skipped),
+            'skipped_test_ids':[test.id() for test,_reason in result.skipped]},indent=2)+'\n')
     return 0 if result.wasSuccessful() else 1
 
 if __name__=='__main__':raise SystemExit(main())
