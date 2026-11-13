@@ -1,6 +1,6 @@
 # Restaurant Wine Reference — synthetic implementation
 
-This is an illustrative implementation with fictional data, authored for offline engineering demonstrations. It is not an employer application, production deployment, or historical source reconstruction. Rights and disclosure approval remain pending.
+This is an illustrative implementation with fictional data, authored for offline engineering demonstrations. It is not an employer application, production deployment, or historical source reconstruction. Owner-authorized public publication is complete; original-source confidentiality remains in effect. Hosted CI is verified in the [release acceptance record](../docs/release-acceptance.md).
 
 ## Run the complete offline tests
 
@@ -44,7 +44,7 @@ The safe worker passes up to 12 eligible candidates to the structured-output mod
 
 The local regression suite tests the real WSGI callable, store, worker and mocked HTTP provider contracts. It does **not** demonstrate valid paid OpenAI/Postmark credentials, live Typeform delivery, a PostgreSQL server, network interruption under actual production load, or end-to-end delivery in a staging environment. PostgreSQL dependency (`psycopg2`) is optional and is not required for offline tests. Install pinned optional dependencies using `python -m pip install -r requirements-integration.txt`, review dependency advisories, then run version-tracked transactional migrations against a disposable PostgreSQL database before any real deployment. The dependency installation and live provider calls were not available in the offline audit. The independent SQLite reference architecture is not claimed to be a production-equivalent replacement for the historical PostgreSQL app.
 
-See the [issue-by-issue repair matrix](../docs/prepublication-repair-matrix.md) and [independent case-study evidence map](../docs/evidence-map.md). No employer source code, personal diner data, original wine inventory, or access secrets are included. Public posting still requires disclosure rights review.
+See the [issue-by-issue repair matrix](../docs/prepublication-repair-matrix.md) and [independent case-study evidence map](../docs/evidence-map.md). No employer source code, personal diner data, original wine inventory, or access secrets are included. Public posting of this synthetic reference was expressly authorized by the owner; private historical material remains withheld.
 
 
 ### Operational integrity controls (v3)
@@ -110,7 +110,7 @@ Live PostgreSQL and provider staging are separate authorization gates.
 The [v16 remediation record](../docs/v16-eight-finding-remediation.md) explains
 the complete claim-nonce enforcement, inert SVG preflight, canonical SQLite
 JSON, and PostgreSQL migration 008 quarantine/readback semantics. Live
-PostgreSQL and provider staging, and owner publication approval, are separate.
+PostgreSQL and provider staging remain unverified. Owner-authorized publication is complete.
 
 
 ## Current v18 reference release
@@ -118,5 +118,5 @@ PostgreSQL and provider staging, and owner publication approval, are separate.
 The [v18 release-closure record](../docs/v18-seven-finding-release-closure.md)
 tracks the seven independently reproduced A17 findings and their verified source
 repairs. Existing SQLite schemas are checked before use, with reviewed migration
-required for incompatible state. Live PostgreSQL, authenticated providers and
-publication approval remain separate external gates.
+required for incompatible state. Live PostgreSQL and authenticated providers
+remain external integration gates. Owner-authorized publication and hosted CI are complete.
