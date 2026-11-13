@@ -1,5 +1,11 @@
 # Release acceptance: ending the re-audit loop
 
+## Completed publication
+
+**Publication status:** Public and branch-protected. Certified engineering baseline: `dc328b3f2d14acb1f8a0b59472c69d096f1832e1`, Git tree `e1b2f84fee8e1942f2a97e1d1aefbf4eeef05b6d`, 100 tracked files. [Hosted CI](https://github.com/ryanrowe2/restaurant-wine-recommendation-reference/actions/runs/43330352366) passed Python 3.10, 3.12 and 3.14: 325 tests executed, one optional skip, 86% branch coverage. Subsequent presentation edits have their own Git commit identity.
+
+The owner expressly authorized the published synthetic reference. Publication and hosted CI are complete. The historical offline gate behavior and review policy below are preserved: its `publication_ready=false` result is not the current publication status and does not reverse the separate owner authorization. Original private-source evidence remains withheld.
+
 ## Why the process changed
 
 An automated-test count answers whether **known** assertions passed. It never proves that every possible software defect has been found. Earlier releases were repeatedly called "fully resolved" after addressing the most recent issue list, then independent audits uncovered new conditions. The corrective action is to preserve a single evidence-backed candidate, evaluate **explicit risk-based gates**, and record every new issue without repeatedly resetting the entire project.
@@ -32,15 +38,15 @@ The `quality/issue_register.json` file holds the current issue statuses. The imm
 5. **Offline stopping rule:** no known open critical/high defects; no unadjudicated security/privacy findings; each closed issue has regression evidence; full gate and exact-artifact scan green. Document accepted lower-risk items rather than endlessly blocking on theoretical edge cases.
 6. **Portfolio publication stopping rule:** document rights to describe the historical project and obtain explicit owner authorization to publish the exact candidate. Live PostgreSQL/provider tests are not prerequisites for publishing an **accurately disclosed independent reference example**. They are prerequisites for claims of tested live integration. GitHub-hosted CI follows an authorized push (possibly first to a private repository); it cannot be a condition preceding any repository creation.
 
-## External checks currently unverified
+## External checks and completed publication gates
 
 | Gate | Required evidence |
 |---|---|
 | Disposable PostgreSQL integration (**production integration claim**) | Actual supported PostgreSQL instance, schema migrations, rollback, alias/metadata preservation and concurrent updates; sanitized execution log |
 | Provider staging (**production integration claim**) | Authorized Typeform signed event, supported OpenAI strict JSON schema, Postmark acceptance/receipt/timeout, and recovery drills without real diner data |
-| Hosted GitHub CI (**after authorized push**) | Workflow results for the exact reviewed commit across the selected Python matrix |
+| Hosted GitHub CI (**completed**) | [Successful baseline workflow](https://github.com/ryanrowe2/restaurant-wine-recommendation-reference/actions/runs/43330352366), Python 3.10 / 3.12 / 3.14 |
 | Operational readiness (**production deployment claim**) | Backups/restore, failure injection under worker concurrency, alert routing, data-retention/security controls and abuse budgets |
-| Portfolio publication (**mandatory before public push**) | Rights/permission to describe the potentially restricted project claims and the user's explicit approval for the exact public artifact |
+| Portfolio publication (**completed**) | Owner-authorized synthetic reference published publicly; original-source material remains confidential |
 
 The codebase is a **synthetic, independently authored portfolio reference**, not a production replacement. External checks are not implied to have passed by local mocks. A publication of the *case study* requires clarity about those limits, and production deployment claims require every operational gate.
 

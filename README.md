@@ -1,6 +1,6 @@
 # Restaurant Wine Recommendation Reference
 
-**Synthetic portfolio reference implementation · independently reviewable · publication approval pending.**
+**Synthetic portfolio reference implementation · independently reviewable · publicly published · hosted CI verified.**
 
 This repository demonstrates restaurant-grounded wine recommendations using a fictional catalog and an offline-tested Python service. The design filters venue inventory **before** composing customer-facing descriptions. The examples are self-contained and do not represent a deployed commercial application or an employer's source code.
 
@@ -32,7 +32,9 @@ python -B -W error::ResourceWarning -m unittest discover -s examples/tests -q
 python -B scripts/release_gate.py
 ```
 
-The frozen internal v18 source passed 323 unit tests and 32 archive checks before redaction. This **separate public preview** is rechecked independently, and its new SHA-256 and results must be consulted rather than assuming it is byte-identical to the frozen release. Live PostgreSQL, authenticated provider staging, hosted GitHub CI and production fault/load testing have **not** been certified.
+The frozen internal v18 source passed 323 unit tests and 32 archive checks before redaction. This **separate public preview** is rechecked independently, and its new SHA-256 and results must be consulted rather than assuming it is byte-identical to the frozen release. Live PostgreSQL, authenticated provider staging and production fault/load testing have **not** been certified.
+
+**Publication status:** Public and branch-protected. Certified engineering baseline: `dc328b3f2d14acb1f8a0b59472c69d096f1832e1`, Git tree `e1b2f84fee8e1942f2a97e1d1aefbf4eeef05b6d`, 100 tracked files. [Hosted CI](https://github.com/ryanrowe2/restaurant-wine-recommendation-reference/actions/runs/43330352366) passed Python 3.10, 3.12 and 3.14: 325 tests executed, one optional skip, 86% branch coverage. Subsequent presentation edits have their own Git commit identity.
 
 ## Engineering closure and documentation history
 
@@ -45,8 +47,8 @@ The documentation paths below are deliberately retained for navigational continu
 
 ### Historical v7 release controls
 
-The reference archive scanner checks forbidden paths, sensitive tokens and ZIP structure. This preview remains an unapproved publication candidate: an offline pass does not grant IP or distribution rights.
+The reference archive scanner checks forbidden paths, sensitive tokens and ZIP structure. Publication of this independent synthetic reference was expressly authorized by the owner and completed. The scanner remains an offline control; it does not grant IP or distribution rights.
 
 ## Publication boundary
 
-No original employer records, nonpublic filenames, exact historical inventory figures, deployment topology or employer-derived vulnerability notes are published in this preview's documentation. This is an *independent example*, not a claim that a commercial system was fixed, operated or validated. Copyright/assignment and disclosure review are still required before public distribution.
+No original employer records, nonpublic filenames, exact historical inventory figures, deployment topology or employer-derived vulnerability notes are published in this preview's documentation. This is an *independent example*, not a claim that a commercial system was fixed, operated or validated. The owner supplied publication authorization for this synthetic reference. Original-source confidentiality and third-party rights remain intact; publication does not authorize disclosure of private historical material.
