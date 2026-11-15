@@ -1,5 +1,11 @@
 # Restaurant Wine Recommendation Reference
 
+**Problem and approach:** A restaurant recommendation must respect what the venue actually offers. This reference system selects from a trusted, venue-scoped catalog before producing customer-facing wine descriptions, and makes delivery recoverable.
+
+**What to inspect first:** The request-lifecycle diagram and [architecture at a glance](#architecture-at-a-glance) explain the complete path; [run locally](#run-locally) demonstrates it.
+
+**Scope:** Synthetic public reference inspired by professional recommendation work; not the original employer application or a production deployment.
+
 **Synthetic portfolio reference implementation · independently reviewable · publicly published · hosted CI verified.**
 
 This repository demonstrates restaurant-grounded wine recommendations using a fictional catalog and an offline-tested Python service. The design filters venue inventory **before** composing customer-facing descriptions. The examples are self-contained and do not represent a deployed commercial application or an employer's source code.
