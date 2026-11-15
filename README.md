@@ -6,9 +6,9 @@
 
 **Scope:** Synthetic public reference inspired by professional recommendation work; not the original employer application or a production deployment.
 
-**Synthetic portfolio reference implementation · independently reviewable · publicly published · hosted CI verified.**
+**Core design decision:** Filter a fictional venue's inventory **before** generating customer-facing descriptions, and validate selected wine identifiers against trusted catalog data. The service is self-contained and tested offline.
 
-This repository demonstrates restaurant-grounded wine recommendations using a fictional catalog and an offline-tested Python service. The design filters venue inventory **before** composing customer-facing descriptions. The examples are self-contained and do not represent a deployed commercial application or an employer's source code.
+**Review route:** [Architecture](#architecture-at-a-glance) → [code and evidence](#explore-the-code-and-evidence) → [local demonstration](#run-locally) → [publication boundary](#publication-boundary).
 
 ![Reference request lifecycle](diagrams/request-lifecycle.svg)
 
