@@ -6,8 +6,6 @@
 
 **Scope:** Synthetic public reference inspired by professional recommendation work; not the original employer application or a production deployment.
 
-**Core design decision:** Filter a fictional venue's inventory **before** generating customer-facing descriptions, and validate selected wine identifiers against trusted catalog data. The service is self-contained and tested offline.
-
 **Review route:** [Architecture](#architecture-at-a-glance) → [code and evidence](#explore-the-code-and-evidence) → [local demonstration](#run-locally) → [publication boundary](#publication-boundary).
 
 ![Reference request lifecycle](diagrams/request-lifecycle.svg)
